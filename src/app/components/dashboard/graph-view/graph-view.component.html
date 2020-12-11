@@ -1,0 +1,19 @@
+<section class="graph-content">
+  <p *ngIf="!this.graphModeOn">No Charts available, Please click on the '+' to add new chart</p>
+
+  <div class="graph-container" *ngIf="this.graphModeOn">
+    <div class="graph">
+      <canvas baseChart [datasets]="barChartData"  [colors]="barChartColors" [labels]="barChartLabels" [options]="barChartOptions"
+        [plugins]="barChartPlugins" [legend]="barChartLegend" [chartType]="barChartType">
+      </canvas>
+    </div>
+    <div class="graph-config">
+    <app-graph-config  (updateConfig)="updateChartColors($event)"></app-graph-config>
+    </div>
+  </div>
+
+  <button mat-stroked-button (click)="addNewGraph()" class="add-graph-button">
+    +
+  </button>
+
+</section>

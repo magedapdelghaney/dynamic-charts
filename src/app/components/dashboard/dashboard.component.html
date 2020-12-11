@@ -1,0 +1,28 @@
+<div class="container-fluid">
+  <mat-toolbar>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>dynamic-charts app</span>
+  </mat-toolbar>
+
+  <button mat-stroked-button (click)="addNewTab()" class="add-tab-button">
+    <mat-icon>add_box</mat-icon>
+  </button>
+  <mat-tab-group class="main-tab-group mt-2" [selectedIndex]="selectedGraph">
+    <mat-tab *ngFor="let graph of graphs; let graphIndex = index">
+      <ng-template mat-tab-label>{{ graph.title }}
+        <i class="material-icons" (click)="removeGraph(graphIndex)">
+          close
+        </i>
+      </ng-template>
+
+      <div>
+        <app-graph-content [graph]="graph"></app-graph-content>
+      </div>
+    </mat-tab>
+
+  </mat-tab-group>
+
+
+</div>

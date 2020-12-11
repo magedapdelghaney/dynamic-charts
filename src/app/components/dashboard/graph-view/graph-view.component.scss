@@ -1,0 +1,39 @@
+.graph-content {
+  display: flex;
+  min-height: 70vh;
+  .graph-container {
+    display: flex;
+    flex-direction: row;
+    margin-top: 5vh;
+
+    .graph {
+      display: block;
+      width: 1000px;
+      height: 500px;
+    }
+    .graph-config {
+      margin-left: 20vh;
+      background-color: white;
+      height: 100px;
+      padding: 20px;
+      font-size: 20px;
+    }
+  }
+
+  p {
+    font-size: 18px;
+    margin: auto;
+  }
+
+  .add-graph-button {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    background-color: gray;
+    color: white;
+    font-size: 26px;
+    position: absolute;
+    bottom: 0;
+    right: 5%;
+  }
+}
